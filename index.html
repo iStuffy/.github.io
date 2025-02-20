@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агент по недвижимости | Ваш надежный помощник в поиске жилья</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/cofo-sans');
+
+        body {
+            font-family: 'CoFoSans-Black', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFC;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        h2 {
+            font-size: 2em;
+            color: #007BFC;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.2em;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #fff;
+            color: #007BFC;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+        .services, .about, .contact {
+            margin: 40px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .about p {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .about p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #007BFC;
+            border-radius: 3px 0 0 3px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .contact-info div {
+            flex: 1;
+            text-align: center;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .profile-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #007BFC;
+            border-radius: 3px 0 0 3px;
+        }
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        form button {
+            margin-top: 20px;
+        }
+
+        /* Медиа-запросы для адаптации под мобильные устройства */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* Уменьшаем заголовок */
+            }
+            h2 {
+                font-size: 1.5em; /* Уменьшаем подзаголовки */
+            }
+            p {
+                font-size: 1em; /* Уменьшаем размер текста */
+            }
+            .logo {
+                width: 200px; /* Уменьшаем логотип */
+            }
+            .cta-button {
+                padding: 10px 20px; /* Уменьшаем кнопку */
+                font-size: 1em;
+            }
+            .contact-info {
+                flex-direction: column; /* Контактная информация в столбик */
+            }
+            .contact-info div {
+                margin-bottom: 10px; /* Отступ между элементами */
+            }
+            .profile-photo {
+                max-width: 100%; /* Фото на всю ширину */
+            }
+            form input, form textarea {
+                font-size: 0.9em; /* Уменьшаем размер текста в форме */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em; /* Еще меньше заголовок */
+            }
+            h2 {
+                font-size: 1.2em; /* Еще меньше подзаголовки */
+            }
+            .logo {
+                width: 150px; /* Еще меньше логотип */
+            }
+            .cta-button {
+                width: 100%; /* Кнопка на всю ширину */
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="D:\Самолет Плюс\Сайт\images\logo.png.png" alt="Логотип агентства недвижимости" class="logo">
+            <h1>Надежный агент по недвижимости</h1>
+            <p style="color: #fff; font-size: 1.5em;">Помогаю найти дом вашей мечты быстро и юридически безопасно.</p>
+            <div class="contact-info">
+                <div>
+                    <p>Телефон: <a href="tel:+79932707095">+7 993 270 70 95</a></p>
+                </div>
+                <div>
+                    <p>Email: <a href="mailto:info@realestate.ru">info@realestate.ru</a></p>
+                </div>
+            </div>
+            <a href="#contact" class="cta-button">Связаться со мной</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about">
+            <h2>Обо мне</h2>
+            <img src="D:\Самолет Плюс\Сайт\images\profile.jpg.png" alt="Фото Александра Поварницина" class="profile-photo">
+            <p>Меня зовут Александр Поварницин.</p>
+            <p>Профессиональный агент по недвижимости на вашем районе.</p>
+            <p>Моя цель — помочь вам найти идеальное жилье, соответствующее вашим потребностям и бюджету.</p>
+            <p>Работаю с клиентами на всех этапах сделки, обеспечивая прозрачность и надежность.</p>
+        </section>
+
+        <section class="services">
+            <h2>Мои услуги</h2>
+            <ul>
+                <li>Поиск и подбор недвижимости</li>
+                <li>Организация просмотров</li>
+                <li>Юридическое сопровождение сделок</li>
+                <li>Консультации по ипотеке</li>
+                <li>Оценка недвижимости</li>
+            </ul>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Свяжитесь со мной</h2>
+            <p>Готовы начать поиск вашего нового дома? Оставьте заявку, и я свяжусь с вами в ближайшее время.</p>
+            <form action="#" method="post">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 C+. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
