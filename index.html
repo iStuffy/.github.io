@@ -132,6 +132,7 @@
             display: block;
             margin-top: 10px;
             font-weight: bold;
+            text-align: right; /* Выравнивание текста по правому краю */
         }
         form input, form textarea {
             width: 100%;
@@ -140,9 +141,11 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
+            box-sizing: border-box;
         }
         form button {
             margin-top: 20px;
+            width: 100%; /* Кнопка на всю ширину */
         }
 
         /* Медиа-запросы для адаптации под мобильные устройства */
@@ -204,7 +207,7 @@
         .about-content {
             display: flex;
             gap: 20px;
-            align-items: stretch; /* Выравниваем по высоте */
+            align-items: flex-start; /* Выравниваем по верхней границе */
         }
         .profile-photo {
             flex: 1;
@@ -218,6 +221,18 @@
             border-radius: 10px;
             overflow: hidden;
             background-color: #e0e0e0; /* Заглушка, если карта не загрузится */
+        }
+
+        /* Стили для формы обратной связи */
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact form label {
+            text-align: right; /* Выравнивание текста по правому краю */
+        }
+        .contact form input, .contact form textarea {
+            width: 100%; /* Поля на всю ширину */
         }
     </style>
 </head>
