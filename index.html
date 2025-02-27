@@ -52,6 +52,7 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            box-sizing: border-box;
         }
         .cta-button:hover {
             background-color: #f0f0f0;
@@ -161,6 +162,7 @@
             .cta-button {
                 padding: 10px 20px; /* Уменьшаем кнопку */
                 font-size: 1em;
+                width: auto; /* Убираем растягивание на всю ширину */
             }
             .contact-info {
                 flex-direction: column; /* Контактная информация в столбик */
@@ -173,6 +175,12 @@
             }
             form input, form textarea {
                 font-size: 0.9em; /* Уменьшаем размер текста в форме */
+            }
+            .about-content {
+                flex-direction: column; /* Фото и карта в столбик на мобильных */
+            }
+            .map {
+                margin-top: 20px; /* Отступ между фото и картой */
             }
         }
 
@@ -187,9 +195,22 @@
                 width: 150px; /* Еще меньше логотип */
             }
             .cta-button {
-                width: 100%; /* Кнопка на всю ширину */
+                width: auto; /* Кнопка не на всю ширину */
                 text-align: center;
             }
+        }
+
+        /* Стили для блока с фото и картой */
+        .about-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .map {
+            flex: 1;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -214,7 +235,10 @@
     <main class="container">
         <section class="about">
             <h2>Обо мне</h2>
-            <img src="img/profile.png" alt="Фото Александра" class="profile-photo">
+            <div class="about-content">
+                <img src="img/profile.png" alt="Фото Александра" class="profile-photo">
+                <div class="map" id="map"></div>
+            </div>
             <p>Меня зовут Александр Поварницин.</p>
             <p>Профессиональный агент по недвижимости на вашем районе.</p>
             <p>Моя цель — помочь вам найти идеальное жилье, соответствующее вашим потребностям и бюджету.</p>
@@ -254,5 +278,25 @@
             <p>&copy; 2025 C+. Все права защищены.</p>
         </div>
     </footer>
+
+    <!-- Подключение Яндекс.Карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
+    <script>
+        // Инициализация карты
+        ymaps.ready(function () {
+            var map = new ymaps.Map('map', {
+                center: [55.76, 37.64], // Координаты центра карты (Москва)
+                zoom: 10 // Масштаб карты
+            });
+
+            // Добавление метки
+            var placemark = new ymaps.Placemark([55.76, 37.64], {
+                hintContent: 'Наш офис',
+                balloonContent: 'Здесь находится наш офис'
+            });
+
+            map.geoObjects.add(placemark);
+        });
+    </script>
 </body>
 </html>
