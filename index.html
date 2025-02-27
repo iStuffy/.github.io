@@ -129,19 +129,22 @@
             border-radius: 3px 0 0 3px;
         }
         form label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
+            display: inline-block;
+            width: 100px; /* Ширина метки */
             text-align: right; /* Выравнивание текста по правому краю */
+            margin-right: 10px; /* Отступ между меткой и полем ввода */
         }
         form input, form textarea {
-            width: 100%;
+            width: calc(100% - 120px); /* Ширина поля ввода с учетом метки */
             padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
             box-sizing: border-box;
+        }
+        form textarea {
+            height: 100px; /* Высота текстового поля */
         }
         form button {
             margin-top: 20px;
@@ -201,6 +204,14 @@
                 width: auto; /* Кнопка не на всю ширину */
                 text-align: center;
             }
+            form label {
+                width: 100%; /* Метки на всю ширину на мобильных */
+                text-align: left; /* Выравнивание текста по левому краю */
+                margin-right: 0; /* Убираем отступ */
+            }
+            form input, form textarea {
+                width: 100%; /* Поля ввода на всю ширину */
+            }
         }
 
         /* Стили для блока с фото и картой */
@@ -227,12 +238,6 @@
         .contact form {
             max-width: 600px;
             margin: 0 auto;
-        }
-        .contact form label {
-            text-align: right; /* Выравнивание текста по правому краю */
-        }
-        .contact form input, .contact form textarea {
-            width: 100%; /* Поля на всю ширину */
         }
     </style>
 </head>
@@ -284,14 +289,22 @@
             <h2>Свяжитесь со мной</h2>
             <p>Готовы начать поиск вашего нового дома? Оставьте заявку, и я свяжусь с вами в ближайшее время.</p>
             <form action="#" method="post">
-                <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Сообщение:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <div>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
                 <button type="submit" class="cta-button">Отправить</button>
             </form>
         </section>
